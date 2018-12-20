@@ -20,7 +20,7 @@ WildRydes.map = WildRydes.map || {};
             method: 'GET',
 
             // need rectify
-            url: _config.api.invokeUrl + '/street?string1=' + '560W 43rd St' + '&string2='+ 'New York' + '&string3='+ 'NY' + '&string4='+ '10036',
+            url: 'https://vc685eiaf9.execute-api.us-west-2.amazonaws.com/prod' + '/street?string=' + "560W 43rd St, New York, NY, 10036",
 
             headers: {
                 Authorization: authToken
@@ -54,20 +54,16 @@ WildRydes.map = WildRydes.map || {};
 
 
     function handleDataFromDB(event) {
-        console.log('Start send email to get value');
+        console.log('Start send address to get value');
         var address = $('#addressInputGet').val();
         var city = $('#cityInputGet').val();
         var state = $('#stateInputGet').val();
         var zip = $('#zipInputGet').val();
-        var inputData = [0,0,0,0];
-        inputData[0] = address;
-        inputData[1] = city;
-        inputData[2] = state;
-        inputData[3] = zip;
+        var inputData = address;
         console.log(inputData);
         event.preventDefault();
-        Address(inputData);
-        console.log('End send email to get value');
+        Address("test");
+        console.log('End send address to get value');
     }
 
 }(jQuery));

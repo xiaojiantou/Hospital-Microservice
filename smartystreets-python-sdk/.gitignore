@@ -1,0 +1,9 @@
+.cache/v/cache
+*.pyc
+.coverage
+htmlcov
+*.gz
+*.py-r
+/.idea
+/dist/
+/MANIFEST
